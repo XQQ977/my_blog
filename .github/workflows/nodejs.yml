@@ -43,7 +43,7 @@ jobs:
         run: git reset --hard
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.samkirkland.com
           username: username@samkirkland.com
