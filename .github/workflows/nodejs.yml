@@ -6,7 +6,7 @@ on: # 触发此文件运行的条件
 
 name: CI/CD # 此工作流程（workflow）的名字
 jobs:
-  FTP-Deploy-Action:
+   web-deploy:
     name: CI&CD # 此任务（job）的名字
     runs-on: ubuntu-24.04 # 运行环境
     steps:
@@ -46,8 +46,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.samkirkland.com
-          username: username@samkirkland.com
-          password: CrazyUniquePassword&%123
+          username: myFtpUserName
+          password: ${{ secrets.ftp_password }}
           local-dir: docs/.vuepress/dist/ # 选择哪些文件要部署到服务器，这个选项在这里选了之后，要在.git-ftp-include中添加相应的路径
           server-dir: /
 
